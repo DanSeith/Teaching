@@ -15,7 +15,7 @@
   
   background-repeat: no-repeat;
   background-size: cover;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="NMR" tags="" position="900,300" size="100,100">Take a look at the following NMR spectra and note the integration, splitting, and chemical shifts.
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="NMR" tags="" position="900,150" size="100,100">Take a look at the following NMR spectra and note the integration, splitting, and chemical shifts.
 
 Major:
 
@@ -41,6 +41,8 @@ Minor:
 
 (link: &quot;Click to continue&quot;)[==
 
+Let&#39;s get an idea of what we&#39;re dealing with
+
 For the major compound:
 How many protons?
 (dropdown: bind $protons, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;)
@@ -64,23 +66,74 @@ How do you want to separate the compounds?
 [[Base Extract]]
 [[Acid Extract]]
 [[Recrystallization]] 
-]</tw-passagedata><tw-passagedata pid="2" name="Recrystallization" tags="" position="600,500" size="100,100">(set:$tried = 0)
-(link: &quot;Take a TLC&quot;)[TLC shows streaks, what do you want to do?
-(link-reveal:&quot;Run TLC with AcOH in eluent &quot;)+(colour: &quot;green&quot;)[-&gt; The TLC shows two clear spots (set: $tried = $tried +1)]
-(link:&quot;Run TLC with TEA in eluent&quot;)+(colour: &quot;red&quot;)[The TLC shows one spot at the baseline (set: $tried = $tried +1)]
-]
-(link: &quot;Take a MP&quot;)+(colour: &quot;red&quot;)[MP is low.]
+]</tw-passagedata><tw-passagedata pid="2" name="Recrystallization" tags="" position="600,575" size="100,100"> Which layer is on top?
+(dropdown: bind $top, &#39;Water&#39;,&#39;Ether&#39;)
+(link-repeat: &quot;Check my answer&quot;)[==
+(if: $top is &#39;Ether&#39;)[==
+(set: $mass to (either: 1.11, 1.21, 1.36, 1.46)*400)
+Product mass: $mass mg
+(link: &quot;Take a TLC&quot;)[&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/189686388@N07/50219941956/in/dateposted-public/&quot; title=&quot;A-page-003&quot;&gt;&lt;img src=&quot;https://live.staticflickr.com/65535/50219941956_e68231c8cb.jpg&quot; width=&quot;500&quot; height=&quot;386&quot; alt=&quot;A-page-003&quot;&gt;&lt;/a&gt;]
+(link: &quot;Take a MP&quot;)+(colour: &quot;red&quot;)[42-55° MP is low. Range is broad.
+(set: $tried = $tried +1)]
 
-(link: &quot;Ask the TA&quot;)[TA: Let&#39;s think about the different separation strategies, does our compound have exchangeable protons?]</tw-passagedata><tw-passagedata pid="3" name="Acid Extract" tags="" position="1000,500" size="100,100">&lt;img src=https://www.researchgate.net/profile/Thiruverkadu_Saravanan/publication/309117212/figure/fig2/AS:482634041171972@1492080330589/Thin-layer-chromatography-profile-of-methanol-extract-from-the-petals-of-Hibiscus.png&gt;
-Have we separated the compounds?
-[[Yes -&gt;NMR]]
-[[No -&gt;NMR]]</tw-passagedata><tw-passagedata pid="4" name="End" tags="" position="900,700" size="100,100">(history:)
+Are you done?
+(link: &quot;Yes&quot;)[TA: No way! Your MP is low and the TLC indicates impure products. Your mass is too large as well]
+(link: &quot;No&quot;)[[Retry Extraction]]</tw-passagedata><tw-passagedata pid="3" name="Acid Extract" tags="" position="1000,575" size="100,100"> Which layer is on top?
+(dropdown: bind $top, &#39;Water&#39;,&#39;Ether&#39;)
+(link-repeat: &quot;Check my answer&quot;)[==
+(if: $top is &#39;Ether&#39;)[==
+(set: $mass to (either: 1.11, 1.21, 1.36, 1.46)*400)
+Product mass: $mass mg
+(link: &quot;Take a TLC&quot;)[&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/189686388@N07/50219941956/in/dateposted-public/&quot; title=&quot;A-page-003&quot;&gt;&lt;img src=&quot;https://live.staticflickr.com/65535/50219941956_e68231c8cb.jpg&quot; width=&quot;500&quot; height=&quot;386&quot; alt=&quot;A-page-003&quot;&gt;&lt;/a&gt;]
+(link: &quot;Take a MP&quot;)+(colour: &quot;red&quot;)[42-55° MP is low. Range is broad.
+(set: $tried = $tried +1)]
+
+Are you done?
+(link: &quot;Yes&quot;)[TA: No way! Your MP is low and the TLC indicates impure products. Your mass is too large as well]
+(link: &quot;No&quot;)[[Retry Extraction]]</tw-passagedata><tw-passagedata pid="4" name="End" tags="" position="900,700" size="100,100">(history:)
 (current-date:)
 (current-time:)
-</tw-passagedata><tw-passagedata pid="5" name="Liquid-Liquid" tags="" position="1200,500" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="Base Extract" tags="" position="800,500" size="100,100">&lt;img src=https://www.researchgate.net/profile/Thiruverkadu_Saravanan/publication/309117212/figure/fig2/AS:482634041171972@1492080330589/Thin-layer-chromatography-profile-of-methanol-extract-from-the-petals-of-Hibiscus.png&gt;
+</tw-passagedata><tw-passagedata pid="5" name="Liquid-Liquid" tags="" position="1200,575" size="100,100"> Which layer is on top?
+(dropdown: bind $top, &#39;Water&#39;,&#39;Ether&#39;)
+(link-repeat: &quot;Check my answer&quot;)[==
+(if: $top is &#39;Ether&#39;)[==
+(set: $mass to (either: 0.59, 0.68, 0.73, 0.79)*400)
+Product mass: $mass mg
+(link: &quot;Take a TLC&quot;)[&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/189686388@N07/50219941956/in/dateposted-public/&quot; title=&quot;A-page-003&quot;&gt;&lt;img src=&quot;https://live.staticflickr.com/65535/50219941956_e68231c8cb.jpg&quot; width=&quot;500&quot; height=&quot;386&quot; alt=&quot;A-page-003&quot;&gt;&lt;/a&gt;]
+(link: &quot;Take a MP&quot;)+(colour: &quot;green&quot;)[72-76° MP is high.]
+
 You did it! Congrats!
-MP: High
-[[Submit -&gt;End]]</tw-passagedata></tw-storydata>
+[[Submit -&gt;End]]</tw-passagedata><tw-passagedata pid="6" name="Base Extract" tags="" position="800,575" size="100,100"> Which layer is on top?
+(dropdown: bind $top, &#39;Water&#39;,&#39;Ether&#39;)
+(link-repeat: &quot;Check my answer&quot;)[==
+(if: $top is &#39;Ether&#39;)[==
+(set: $mass to (either: 1.11, 1.21, 1.36, 1.46)*400)
+Product mass: $mass mg
+(link: &quot;Take a TLC&quot;)[&lt;a data-flickr-embed=&quot;true&quot; href=&quot;https://www.flickr.com/photos/189686388@N07/50219941956/in/dateposted-public/&quot; title=&quot;A-page-003&quot;&gt;&lt;img src=&quot;https://live.staticflickr.com/65535/50219941956_e68231c8cb.jpg&quot; width=&quot;500&quot; height=&quot;386&quot; alt=&quot;A-page-003&quot;&gt;&lt;/a&gt;]
+(link: &quot;Take a MP&quot;)+(colour: &quot;red&quot;)[42-55° MP is low. Range is broad.
+(set: $tried = $tried +1)]
+
+Are you done?
+(link: &quot;Yes&quot;)[TA: No way! Your MP is low and the TLC indicates impure products. Your mass is too large as well]
+(link: &quot;No&quot;)[[Retry Extraction]]</tw-passagedata><tw-passagedata pid="7" name="Untitled Passage" tags="startup" position="900,50" size="100,100">(set: $unkn to &quot;A&quot;)
+(set:$tried = 0)</tw-passagedata><tw-passagedata pid="8" name="1:1" tags="" position="900,475" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="9" name="Retry Extraction" tags="" position="600,300" size="100,100">Picture of compounds here
+
+
+How do you want to separate the compounds?
+[[Liquid-Liquid]]
+[[Base Extract]]
+[[Acid Extract]]
+[[Recrystallization]] 
+]</tw-passagedata><tw-passagedata pid="10" name="Beginning" tags="" position="1100,50" size="100,100">Enter your unknown number:
+(set: $unknown to (prompt: &quot;Enter your number:&quot;, &quot;&quot;))
+
+(if: (num: $unknown) % 6 is 1)[A]
+(if: (num: $unknown) % 6 is 2)[B]
+(if: (num: $unknown) % 6 is 3)[C]
+(if: (num: $unknown) % 6 is 4)[D]
+(if: (num: $unknown) % 6 is 5)[E]
+(if: (num: $unknown) % 6 is 0)[F]
+</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
